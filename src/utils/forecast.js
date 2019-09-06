@@ -9,7 +9,7 @@ const forecast = (lat, long, callback) => {
         } else if (body.error) {
             callback('Incorrect coordinates passed. Please try again', undefined);
         } else {
-            callback(undefined, body.daily.data[0].summary + " It is currently "+body.currently.temperature+" degrees out. There is a "+body.currently.precipProbability+"% chance of rain.");
+            callback(undefined, body.daily.data[0].summary + " It is currently "+body.currently.temperature+" degrees out. There is a "+body.currently.precipProbability+"% chance of rain. The humidity is "+body.currently.humidity+" and windspeed is "+body.currently.windSpeed+". The max temperature for the day is "+body.daily.data[0].temperatureMax+" and min is "+body.daily.data[0].temperatureMin);
         }
     });
 }
